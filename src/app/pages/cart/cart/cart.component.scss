@@ -1,0 +1,26 @@
+#cart {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  .navigateButton {
+    display: flex;
+    width: 100%;
+    padding-bottom: 3%;
+    flex-direction: column;
+    align-items: flex-end;
+    .sum {
+      margin-right: 2%;
+      font-weight: 400;
+      font-size: 2rem;
+    }
+    button {
+      cursor: pointer;
+      padding: 2% 6%;
+      letter-spacing: 1px;
+      background-color: #d8d8d8;
+      color: #616161;
+      border: 2px solid #b6b6b6;
+      margin-right: 2%;
+    }
+  }
+}

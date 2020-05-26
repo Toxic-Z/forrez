@@ -1,0 +1,91 @@
+<div id="shipping">
+  <form
+    *ngIf="products && form"
+    class="form"
+    [formGroup]="form">
+    <div
+      [class.invalidLine]="form.controls.name.errors && form.controls.name.touched"
+      class="line">
+      <h2>Name*</h2>
+      <div class="input">
+        <input
+          [class.invalid]="form.controls.name.errors && form.controls.name.touched"
+          placeholder="John Kowalsky"
+          formControlName="name">
+        <span *ngIf="form.controls.name.errors && form.controls.name.touched">
+          Invalid name
+        </span>
+      </div>
+    </div>
+    <div
+      [class.invalidLine]="form.controls.address.errors && form.controls.address.touched"
+      class="line">
+      <h2>Address*</h2>
+      <div class="input">
+        <input
+          [class.invalid]="form.controls.address.errors && form.controls.address.touched"
+          placeholder="Address"
+          formControlName="address">
+        <span *ngIf="form.controls.address.errors && form.controls.address.touched">
+          Invalid address
+        </span>
+      </div>
+    </div>
+    <div
+      [class.invalidLine]="form.controls.phone.errors && form.controls.phone.touched"
+      class="line">
+      <h2>Phone*</h2>
+      <div class="input">
+        <input
+          [class.invalid]="form.controls.phone.errors && form.controls.phone.touched"
+          placeholder="+48"
+          formControlName="phone"
+          (input)="validatePhone($event)">
+        <span *ngIf="form.controls.phone.errors && form.controls.phone.touched">
+          Invalid phone number
+        </span>
+      </div>
+    </div>
+    <div
+      [class.invalidLine]="form.controls.email.errors && form.controls.email.touched"
+      class="line">
+      <h2>Email*</h2>
+      <div class="input">
+        <input
+          [class.invalid]="form.controls.email.errors && form.controls.email.touched"
+          placeholder="E-mail"
+          formControlName="email"
+          type="text">
+        <span *ngIf="form.controls.email.errors && form.controls.email.touched">
+          Invalid e-mail
+        </span>
+      </div>
+    </div>
+    <div
+      [class.invalidLine]="form.controls.shippingOption.errors && form.controls.shippingOption.touched"
+      class="line">
+      <h2>Shipping options</h2>
+      <div class="input">
+        <select
+          [class.invalid]="form.controls.shippingOption.errors && form.controls.shippingOption.touched"
+          formControlName="shippingOption">
+          <option
+            *ngFor="let option of shippingOptions"
+            [value]="option">
+            {{option}}
+          </option>
+        </select>
+        <span *ngIf="form.controls.shippingOption.errors && form.controls.shippingOption.touched">
+            You should select one
+        </span>
+      </div>
+    </div>
+    <div class="payBtn">
+      <button
+        (click)="completeOrder()"
+        [disabled]="form.invalid"
+        [class.disabled]="form.invalid">
+        PAY</button>
+    </div>
+  </form>
+</div>

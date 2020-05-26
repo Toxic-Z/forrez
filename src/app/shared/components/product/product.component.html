@@ -1,0 +1,45 @@
+<div
+  class="product">
+  <div class="productPic">
+    <div class="pic">
+      <fa-icon
+        (click)="clearInput()"
+        size="7x"
+        [icon]="faImage"></fa-icon>
+    </div>
+  </div>
+  <div class="productLabels">
+    <h2 class="productTitle">{{product.title}}</h2>
+    <span
+      class="productDescription">
+      {{product.description}}</span>
+  </div>
+  <div class="productControls">
+    <div
+      class="clearIcon">
+      <fa-icon
+        (click)="clearInput()"
+        size="2x"
+        [icon]="trashAlt"></fa-icon>
+    </div>
+    <div
+      class="changePlace">
+      <div class="input">
+        <div
+          (click)="changeValue('dec')"
+          class="minus cursorPointer"></div>
+        <input
+          placeholder="0"
+          max="50"
+          min="0"
+          (input)="checkInput($event)"
+          [(ngModel)]="product.count"
+          type="number">
+        <div
+          (click)="changeValue('inc')"
+          class="plus cursorPointer"></div>
+      </div>
+      <h2 class="productTitle">{{calcSum()|currency: 'EUR' : ''}}&nbsp;&euro;</h2>
+    </div>
+  </div>
+</div>

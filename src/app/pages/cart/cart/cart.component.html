@@ -1,0 +1,23 @@
+<div
+  id="cart">
+  <div *ngIf="products && products.length">
+    <app-product
+      [prod]="product"
+      *ngFor="let product of products">
+    </app-product>
+  </div>
+  <div *ngIf="!products">
+    <app-skeleton-product
+      *ngFor="let n of [0, 1, 2]"
+    ></app-skeleton-product>
+  </div>
+  <div
+    class="navigateButton"
+    *ngIf="products && products.length">
+    <h2 class="sum">{{calcSum(products)|currency: 'EUR' : ''}}&nbsp;&euro;</h2>
+    <button
+      [disabled]="calcSum(products) === 0"
+      [class.disabled]="calcSum(products) === 0"
+      (click)="onBuyAction()">BUY</button>
+  </div>
+</div>

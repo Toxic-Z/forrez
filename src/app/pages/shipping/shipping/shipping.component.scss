@@ -1,0 +1,75 @@
+#shipping {
+  display: flex;
+  padding-top: 10%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .payBtn {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    button {
+      cursor: pointer;
+      padding: 3% 9%;
+      letter-spacing: 1px;
+      background-color: #d8d8d8;
+      color: #616161;
+      border: 2px solid #b6b6b6;
+    }
+  }
+  .form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    .invalidLine {
+      align-items: center!important;
+    }
+    .line {
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-weight: 500;
+        margin: 0;
+      }
+      .invalid {
+        border: 1px solid red;
+      }
+      .input {
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: space-between;
+        input, select {
+          width: 100%;
+          font: 400 1rem Arial;
+          padding: 3.5%;
+          -moz-box-sizing:content-box;
+          box-sizing:content-box;
+          -webkit-box-sizing:content-box;
+        }
+        select {
+          background-color: white;
+        }
+        span {
+          padding-top: 2%;
+          width: 57%;
+          color: #f44336;
+          font-size: 15px;
+          letter-spacing: -0.1px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 812px) {
+  .form {
+    width: 90% !important;
+  }
+  input, select {
+    width: auto!important;
+  }
+}
