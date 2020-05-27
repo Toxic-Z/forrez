@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
   }
 
   public onBuyAction(): any {
-    this.commonService.setOrderedProducts(this.products);
+    this.commonService.setOrderedProducts(this.products.filter((p: Product) => p.count > 0));
     this.router.navigate(['shipping']);
   }
 }
