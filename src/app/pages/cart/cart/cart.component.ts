@@ -29,12 +29,13 @@ export class CartComponent implements OnInit {
         ).subscribe(() => {
           this.apiService.fetchProducts().subscribe((prods: Product[]) => {
             this.products = prods;
+            this.products.map((i: any) => i.count = 5);
           });
         });
       } else  {
         this.products = pr;
+        this.products.map((i: any) => i.count = 5);
       }
-      this.products.map((i: any) => i.count = 5);
     });
   }
 
