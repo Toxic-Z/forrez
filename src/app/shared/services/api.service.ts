@@ -24,8 +24,6 @@ export class ApiService {
 
   public fetchProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(`${this.url}products`);
-    // return of([
-    // ]);
   }
 
   public createProduct(): any {

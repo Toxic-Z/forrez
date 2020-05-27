@@ -1,5 +1,4 @@
-<div
-  id="cart">
+<div id="cart">
   <div *ngIf="products && products.length">
     <app-product
       [prod]="product"
@@ -8,8 +7,8 @@
   </div>
   <div *ngIf="!products">
     <app-skeleton-product
-      *ngFor="let n of [0, 1, 2]"
-    ></app-skeleton-product>
+      *ngFor="let n of [0, 1, 2]">
+    </app-skeleton-product>
   </div>
   <div
     class="navigateButton"

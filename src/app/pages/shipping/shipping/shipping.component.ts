@@ -21,12 +21,12 @@ export class ShippingComponent implements OnInit {
   public products: Product[] = [];
   private totalSum = 0;
   public form: any;
+
   constructor(
     private apiService: ApiService,
     private commonService: CommonService,
     private router: Router
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.products = this.commonService.fetchOrderedProducts();
@@ -91,8 +91,10 @@ export class ShippingComponent implements OnInit {
   }
 
   public validatePhone(e: any): void {
-    console.log(e);
     if (!Number.isInteger(+e.data) && e.data !== '+') {
+      e.target.value = +e.target.value.slice(0, -1);
+    }
+    if (e.data === '+' && e.target.value.length !== 1) {
       e.target.value = +e.target.value.slice(0, -1);
     }
   }

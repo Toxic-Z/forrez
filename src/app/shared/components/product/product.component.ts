@@ -1,7 +1,7 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {Product} from '../../interfaces/product';
-import {CommonService} from '../../services/common.service';
-import {faImage, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Product } from '../../interfaces/product';
+import { CommonService } from '../../services/common.service';
+import { faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +10,7 @@ import {faImage, faTrashAlt} from '@fortawesome/free-solid-svg-icons';
   encapsulation: ViewEncapsulation.None
 })
 export class ProductComponent implements OnInit {
+
   trashAlt = faTrashAlt;
   faImage = faImage;
   @Input() prod: Product;
